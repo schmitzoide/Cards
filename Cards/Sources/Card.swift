@@ -146,7 +146,7 @@ import UIKit
         self.addGestureRecognizer(tap)
         tap.delegate = self
         tap.cancelsTouchesInView = false
-       
+        
         detailVC.transitioningDelegate = self
         
         // Adding Subviews
@@ -158,6 +158,7 @@ import UIKit
             backgroundIV.backgroundColor = UIColor.white
             super.backgroundColor = UIColor.clear
         }
+        
     }
     
     override open func draw(_ rect: CGRect) {
@@ -180,7 +181,6 @@ import UIKit
         contentInset = 6
     }
     
-    
     //MARK: - Layout
     
     func layout(animating: Bool = true){ }
@@ -198,17 +198,15 @@ import UIKit
             resetAnimated()
         }
     }
-
+    
     
     //MARK: - Animations
     
     private func pushBackAnimated() {
-        
         UIView.animate(withDuration: 0.2, animations: { self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95) })
     }
     
-    private func resetAnimated() {
-        
+    public func resetAnimated() {
         UIView.animate(withDuration: 0.2, animations: { self.transform = CGAffineTransform.identity })
     }
     
@@ -260,8 +258,8 @@ extension Card: UIGestureRecognizerDelegate {
         }
         pushBackAnimated()
     }
-}
 
+}
 
 	//MARK: - Helpers
 
