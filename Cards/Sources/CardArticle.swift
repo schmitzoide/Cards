@@ -74,10 +74,10 @@ import UIKit
         super.draw(rect)
         
         categoryLbl.text = category.uppercased()
-        categoryLbl.textColor = textColor.withAlphaComponent(0.3)
+        categoryLbl.textColor = textColor.withAlphaComponent(0.75)
         categoryLbl.font = UIFont.systemFont(ofSize: 100, weight: .bold)
-        categoryLbl.shadowColor = UIColor.black
-        categoryLbl.shadowOffset = CGSize.zero
+        categoryLbl.shadowColor = UIColor.black.withAlphaComponent(0.2)
+        categoryLbl.shadowOffset = CGSize(width: 1, height: 1)
         categoryLbl.adjustsFontSizeToFitWidth = true
         categoryLbl.minimumScaleFactor = 0.1
         categoryLbl.lineBreakMode = .byTruncatingTail
@@ -86,6 +86,8 @@ import UIKit
         titleLbl.textColor = textColor
         titleLbl.text = title
         titleLbl.font = UIFont.systemFont(ofSize: titleSize, weight: .bold)
+        titleLbl.shadowColor = UIColor.black.withAlphaComponent(0.2)
+        titleLbl.shadowOffset = CGSize(width: 1, height: 1)
         titleLbl.adjustsFontSizeToFitWidth = true
         titleLbl.minimumScaleFactor = 0.1
         titleLbl.lineBreakMode = .byClipping

@@ -117,7 +117,7 @@ import UIKit
         
         //Draw
         bgIconIV.image = icon
-        bgIconIV.alpha = backgroundImage != nil ? 0 : 0.6
+        bgIconIV.alpha = backgroundImage != nil ? 0 : 0.25
         bgIconIV.clipsToBounds = true
         
         iconIV.image = icon
@@ -127,8 +127,8 @@ import UIKit
         titleLbl.textColor = textColor
         titleLbl.font = UIFont.systemFont(ofSize: titleSize, weight: .heavy)
         titleLbl.adjustsFontSizeToFitWidth = true
-        titleLbl.lineHeight(0.70)
-        titleLbl.minimumScaleFactor = 0.1
+        titleLbl.lineHeight(0.85)
+        titleLbl.minimumScaleFactor = 1.0
         titleLbl.lineBreakMode = .byTruncatingTail
         titleLbl.numberOfLines = 3
         backgroundIV.bringSubview(toFront: titleLbl)
@@ -150,13 +150,25 @@ import UIKit
         itemSubtitleLbl.numberOfLines = 2
         itemSubtitleLbl.sizeToFit()
         
-        actionBtn.backgroundColor = UIColor.clear
-        actionBtn.layer.backgroundColor = lightColor.cgColor
-        actionBtn.clipsToBounds = true
-        let btnTitle = NSAttributedString(string: buttonText.uppercased(), attributes: [ NSAttributedStringKey.font : UIFont.systemFont(ofSize: 16, weight: .black), NSAttributedStringKey.foregroundColor : self.tintColor])
-        actionBtn.setAttributedTitle(btnTitle, for: .normal)
         
-        btnWidth = CGFloat((buttonText.count + 2) * 10)
+        if buttonText.count > 0 {
+            itemSubtitleLbl.numberOfLines = 2
+            itemSubtitleLbl.sizeToFit()
+
+            actionBtn.isHidden = true
+            actionBtn.backgroundColor = UIColor.clear
+            actionBtn.layer.backgroundColor = lightColor.cgColor
+            actionBtn.clipsToBounds = true
+            let btnTitle = NSAttributedString(string: buttonText.uppercased(), attributes: [ NSAttributedStringKey.font : UIFont.systemFont(ofSize: 16, weight: .black), NSAttributedStringKey.foregroundColor : self.tintColor])
+            actionBtn.setAttributedTitle(btnTitle, for: .normal)
+            
+            btnWidth = CGFloat((buttonText.count + 2) * 10)
+        } else {
+            itemSubtitleLbl.numberOfLines = 1
+            itemSubtitleLbl.sizeToFit()
+            btnWidth = 0
+            actionBtn.isHidden = true
+        }
         
         layout()
         

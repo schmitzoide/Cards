@@ -94,6 +94,7 @@ import UIKit
     
     public func startSlide() {
         timer = Timer.scheduledTimer(timeInterval: 0.04, target: self, selector: #selector(self.slide), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
     }
 
     public func stopSlide() {
