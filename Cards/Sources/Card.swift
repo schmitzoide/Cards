@@ -37,7 +37,7 @@ import UIKit
     /**
      Amount of blur for the card's shadow.
      */
-    @IBInspectable public var shadowBlur: CGFloat = 10 {
+    @IBInspectable public var shadowBlur: CGFloat = 25 {
         didSet{
             self.layer.shadowRadius = shadowBlur
         }
@@ -45,7 +45,7 @@ import UIKit
     /**
      Alpha of the card's shadow.
      */
-    @IBInspectable public var shadowOpacity: Float = 0.4 {
+    @IBInspectable public var shadowOpacity: Float = 0.25 {
         didSet{
             self.layer.shadowOpacity = shadowOpacity
         }

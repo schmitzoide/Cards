@@ -141,7 +141,7 @@ import UIKit
         itemTitleLbl.lineBreakMode = .byTruncatingTail
         itemTitleLbl.numberOfLines = 0
 
-        itemSubtitleLbl.textColor = textColor
+        itemSubtitleLbl.textColor = textColor.withAlphaComponent(0.5)
         itemSubtitleLbl.text = itemSubtitle
         itemSubtitleLbl.font = UIFont.systemFont(ofSize: itemSubtitleSize)
         itemSubtitleLbl.adjustsFontSizeToFitWidth = true
