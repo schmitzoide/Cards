@@ -128,9 +128,9 @@ import UIKit
         titleLbl.font = UIFont.systemFont(ofSize: titleSize, weight: .heavy)
         titleLbl.adjustsFontSizeToFitWidth = true
         titleLbl.lineHeight(0.85)
-        titleLbl.minimumScaleFactor = 1.0
+        titleLbl.minimumScaleFactor = 0.8
         titleLbl.lineBreakMode = .byTruncatingTail
-        titleLbl.numberOfLines = 3
+        titleLbl.numberOfLines = 4
         backgroundIV.bringSubview(toFront: titleLbl)
         
         itemTitleLbl.textColor = textColor

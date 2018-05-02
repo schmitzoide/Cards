@@ -165,11 +165,11 @@ import UIKit
         super.draw(rect)
         originalFrame = rect
         
-        self.layer.shadowOpacity = shadowOpacity
         self.layer.shadowColor = shadowColor.cgColor
         self.layer.shadowOffset = CGSize.zero
         self.layer.shadowRadius = shadowBlur
         self.layer.cornerRadius = cardRadius
+        self.layer.shadowOpacity = shadowOpacity
         
         backgroundIV.image = backgroundImage
         backgroundIV.layer.cornerRadius = self.layer.cornerRadius
