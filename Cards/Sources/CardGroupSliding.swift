@@ -7,6 +7,7 @@
 //
 import Foundation
 import UIKit
+import Nuke
 
 @IBDesignable open class CardGroupSliding: CardGroup {
 
@@ -129,14 +130,11 @@ extension CardGroupSliding: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         
-        let icon = icons?[indexPath.row % icons!.count]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID, for: indexPath) as! SlidingCVCell
         cell.radius = cell.frame.height/2
-        cell.icon = icon
+        cell.icon = icons?[indexPath.row % icons!.count] ?? UIImage()
         return cell
-        
     }
-    
 }
 
 extension CardGroupSliding: UICollectionViewDelegateFlowLayout{
@@ -148,10 +146,9 @@ extension CardGroupSliding: UICollectionViewDelegateFlowLayout{
     }
 }
 
-
 open class SlidingCVCell: UICollectionViewCell {
     
-    public var icon = UIImage(named: "math")
+    public var icon = UIImage()
     public var iconIV = UIImageView()
     public var radius: CGFloat?
     
@@ -178,16 +175,3 @@ open class SlidingCVCell: UICollectionViewCell {
         iconIV.contentMode = .scaleAspectFill
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

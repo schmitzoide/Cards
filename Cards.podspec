@@ -12,4 +12,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Cards/Sources/*'
   s.frameworks = 'UIKit'
   s.dependency "Player"
+  s.dependency "Nuke"
 end
