@@ -31,7 +31,7 @@ import Nuke
     /**
      Data source for the collection view.
      */
-    public var icons: [UIImage]?
+    public var icons: [String]?
     
     // Priv vars
     fileprivate final let CellID = "SlidingCVCell"
@@ -132,7 +132,7 @@ extension CardGroupSliding: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID, for: indexPath) as! SlidingCVCell
         cell.radius = cell.frame.height/2
-        cell.icon = icons?[indexPath.row % icons!.count] ?? UIImage()
+        cell.urlString = icons?[indexPath.row % icons!.count] ?? ""
         return cell
     }
 }
@@ -148,7 +148,8 @@ extension CardGroupSliding: UICollectionViewDelegateFlowLayout{
 
 open class SlidingCVCell: UICollectionViewCell {
     
-    public var icon = UIImage()
+    //public var icon = UIImage()
+    public var urlString = ""
     public var iconIV = UIImageView()
     public var radius: CGFloat?
     
@@ -168,10 +169,13 @@ open class SlidingCVCell: UICollectionViewCell {
         super.draw(rect)
         
         self.layer.cornerRadius = radius ?? 15
-        iconIV.image = icon
+        iconIV.image = #imageLiteral(resourceName: "presenter")
         iconIV.frame = CGRect(x: 0, y: 0, width: rect.width, height: rect.width)
         iconIV.layer.cornerRadius = radius ?? 15
         iconIV.clipsToBounds = true
         iconIV.contentMode = .scaleAspectFill
+        if let url = URL(string: self.urlString) {
+            Manager.shared.loadImage(with: url, into: iconIV)
+        }
     }
 }
