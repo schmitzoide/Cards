@@ -97,8 +97,8 @@ import UIKit
         subtitleLbl.text = subtitle
         subtitleLbl.textColor = textColor
         subtitleLbl.font = UIFont.systemFont(ofSize: subtitleSize, weight: .medium)
-        subtitleLbl.shadowColor = UIColor.black
-        subtitleLbl.shadowOffset = CGSize.zero
+        subtitleLbl.shadowColor = UIColor.black.withAlphaComponent(0.2)
+        subtitleLbl.shadowOffset = CGSize(width: 1, height: 1)
         subtitleLbl.adjustsFontSizeToFitWidth = true
         subtitleLbl.minimumScaleFactor = 0.1
         subtitleLbl.lineBreakMode = .byTruncatingTail

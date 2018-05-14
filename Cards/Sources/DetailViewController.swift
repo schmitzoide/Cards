@@ -82,7 +82,7 @@ internal class DetailViewController: UIViewController {
             
             detail.alpha = 1
             detail.frame = CGRect(x: 0,
-                                  y: card.backgroundIV.bounds.maxY,
+                                  y: card.backgroundIV.bounds.maxY - (view.frame.height == 812 ? 44 : 0),
                                   width: scrollView.frame.width,
                                   height: detail.frame.height)
              
@@ -141,6 +141,7 @@ internal class DetailViewController: UIViewController {
         card.backgroundIV.frame.origin = scrollView.bounds.origin
         card.backgroundIV.frame.size = CGSize( width: scrollView.bounds.width,
                                             height: card.backgroundIV.bounds.height)
+    
         card.layout(animating: isAnimating)
     
     }

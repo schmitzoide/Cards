@@ -175,7 +175,10 @@ open class SlidingCVCell: UICollectionViewCell {
         iconIV.clipsToBounds = true
         iconIV.contentMode = .scaleAspectFill
         if let url = URL(string: self.urlString) {
-            Nuke.loadImage(with: url, into: iconIV)
+            let request = ImageRequest(url: url)
+            ImagePipeline.shared.loadImage(with: request, progress: nil) {[weak self] (response, error) in
+                self?.iconIV.image = response?.image
+            }
         }
     }
 }
