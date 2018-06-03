@@ -53,7 +53,7 @@ import UIKit
     /**
      Color of the card's shadow.
      */
-    @IBInspectable public var shadowColor: UIColor = UIColor.gray {
+    @IBInspectable public var shadowColor: UIColor = UIColor.black {
         didSet{
             self.layer.shadowColor = shadowColor.cgColor
         }
@@ -69,7 +69,7 @@ import UIKit
     /**
      Corner radius of the card.
      */
-    @IBInspectable public var cardRadius: CGFloat = 20{
+    @IBInspectable public var cardRadius: CGFloat = 20 {
         didSet{
             self.layer.cornerRadius = cardRadius
         }
