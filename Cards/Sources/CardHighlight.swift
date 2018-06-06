@@ -155,11 +155,11 @@ import UIKit
             itemSubtitleLbl.numberOfLines = 2
             itemSubtitleLbl.sizeToFit()
 
-            actionBtn.isHidden = true
+            actionBtn.isHidden = false
             actionBtn.backgroundColor = UIColor.clear
             actionBtn.layer.backgroundColor = lightColor.cgColor
             actionBtn.clipsToBounds = true
-            let btnTitle = NSAttributedString(string: buttonText.uppercased(), attributes: [ NSAttributedStringKey.font : UIFont.systemFont(ofSize: 16, weight: .black), NSAttributedStringKey.foregroundColor : self.tintColor])
+            let btnTitle = NSAttributedString(string: buttonText.uppercased(), attributes: [ NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12, weight: .black), NSAttributedStringKey.foregroundColor : self.tintColor])
             actionBtn.setAttributedTitle(btnTitle, for: .normal)
             
             btnWidth = CGFloat((buttonText.count + 2) * 10)

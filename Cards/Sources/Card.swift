@@ -118,7 +118,9 @@ import UIKit
      Delegate for the card. Should extend your VC with CardDelegate.
      */
     public var delegate: CardDelegate?
+    public var content: Any?
     
+
     //Private Vars
     fileprivate var tap = UITapGestureRecognizer()
     fileprivate var detailVC = DetailViewController()
