@@ -123,7 +123,6 @@ class Animator: NSObject, UIViewControllerAnimatedTransitioning {
         
         return CGAffineTransform(translationX: xMove, y: yMove)
     }
-
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return velocity
