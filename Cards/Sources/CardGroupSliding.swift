@@ -124,7 +124,7 @@ import Nuke
 extension CardGroupSliding: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if icons?.count != nil { return 10000 }
+        if icons?.count != nil { return 1000 }
         else { return 0 }
     }
     
